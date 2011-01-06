@@ -1,0 +1,4 @@
+== openssl-ext
+
+Provides additional features that are not yet available in the OpenSSL
+standard library.

@@ -1,0 +1,81 @@
+have_header: checking for assert.h... -------------------- yes
+
+"gcc -o conftest -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC conftest.c  -L. -L/home/martin/ruby/lib -Wl,-R/home/martin/ruby/lib -L/home/martin/openssl/lib -Wl,-R/home/martin/openssl/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/martin/ruby/lib -L/home/martin/ruby/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <assert.h>
+/* end */
+
+--------------------
+
+package configuration for openssl
+cflags:  
+ldflags: 
+libs: -lssl -lcrypto  
+
+have_header: checking for openssl/ssl.h... -------------------- yes
+
+"gcc -E -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ssl.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_str_set_len() in ruby.h... -------------------- yes
+
+"gcc -o conftest -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   conftest.c  -L. -L/home/martin/ruby/lib -Wl,-R/home/martin/ruby/lib -L/home/martin/openssl/lib -Wl,-R/home/martin/openssl/lib -L.  -rdynamic -Wl,-export-dynamic      -lssl -lcrypto   -Wl,-R -Wl,/home/martin/ruby/lib -L/home/martin/ruby/lib -lruby-static  -lssl -lcrypto   -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rb_str_set_len; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_block_call() in ruby.h... -------------------- yes
+
+"gcc -o conftest -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC   conftest.c  -L. -L/home/martin/ruby/lib -Wl,-R/home/martin/ruby/lib -L/home/martin/openssl/lib -Wl,-R/home/martin/openssl/lib -L.  -rdynamic -Wl,-export-dynamic      -lssl -lcrypto   -Wl,-R -Wl,/home/martin/ruby/lib -L/home/martin/ruby/lib -lruby-static  -lssl -lcrypto   -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rb_block_call; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for openssl/ts.h... -------------------- yes
+
+"gcc -E -I/home/martin/ruby/include/ruby-1.9.1/i686-linux -I/home/martin/ruby/include/ruby-1.9.1/ruby/backward -I/home/martin/ruby/include/ruby-1.9.1 -I. -I/home/martin/openssl/include  -D_FILE_OFFSET_BITS=64   -O0 -g3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ts.h>
+/* end */
+
+--------------------
+
