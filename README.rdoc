@@ -1,4 +1,6 @@
 == openssl-ext
 
 Provides additional features that are not yet available in the OpenSSL
-standard library.
+standard library. The features of this gem are derived from
+{ruby-openssl}[https://github.com/emboss/ruby-openssl]. Stable features
+will be exported to this gem to make them available instantly.
