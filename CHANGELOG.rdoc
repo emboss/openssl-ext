@@ -1,9 +1,10 @@
 === 0.0.1 / 2011-01-18 [emboss]
 Added support for rake-compiler.
 
+=== 0.0.1 / 2011-01-10 [emboss]
+Updated README.
+
 === 0.0.1 / 2011-01-07 [emboss]
 Birth
 
-=== 0.0.1 / 2011-01-10 [emboss]
-Updated README.
 
