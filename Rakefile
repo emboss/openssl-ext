@@ -4,6 +4,7 @@ require 'rake/clean'
 require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'rake/testtask'
+require 'rake/extensiontask'
 
 spec = Gem::Specification.new do |s|
   s.name = 'openssl-ext'
@@ -39,6 +40,8 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "openssl-ext Docs"
   rdoc.rdoc_dir = 'doc/rdoc' # rdoc output folder
 end
+
+Rake::ExtensionTask.new('openssl-ext', spec)
 
 Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
