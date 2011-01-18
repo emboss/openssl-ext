@@ -4,13 +4,12 @@ require 'rake/clean'
 require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'rake/testtask'
-require 'rake/extensiontask'
 
 spec = Gem::Specification.new do |s|
   s.name = 'openssl-ext'
   s.version = '0.0.1'
   s.has_rdoc = true
-  s.extra_rdoc_files = ['README', 'LICENSE']
+  s.extra_rdoc_files = ['README.rdoc', 'LICENSE']
   s.summary = 'Provides additional features for the OpenSSL standard library.'
   s.description = <<-EOF 
     OpenSSL extensions provides additional features that currently do not exist
@@ -21,7 +20,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'Martin.Bosslet@googlemail.com'
   s.homepage = 'https://github.com/emboss'
   s.extensions << 'ext/openssl/ext/extconf.rb'
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,ext,lib,spec,test}/**/*")
+  s.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,ext,lib,spec,test}/**/*")
 	s.test_files = FileList['test/**/test_*.rb']
   s.require_path = "lib"
   s.bindir = "bin"
@@ -34,15 +33,14 @@ Rake::GemPackageTask.new(spec) do |p|
 end
 
 Rake::RDocTask.new do |rdoc|
-  files =['README', 'LICENSE', 'lib/**/*.rb', 'ext/**/*.c']
+  files =['README.rdoc', 'LICENSE', 'lib/**/*.rb', 'ext/**/*.c']
   rdoc.rdoc_files.add(files)
-  rdoc.main = "README" # page to start on
+  rdoc.main = "README.rdoc" # page to start on
   rdoc.title = "openssl-ext Docs"
   rdoc.rdoc_dir = 'doc/rdoc' # rdoc output folder
 end
 
-Rake::ExtensionTask.new('openssl-ext', spec)
-
 Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
+

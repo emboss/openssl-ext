@@ -4,3 +4,14 @@ Provides additional features that are not yet available in the OpenSSL
 standard library. The features of this gem are derived from
 {ruby-openssl}[https://github.com/emboss/ruby-openssl]. Stable features
 will be exported to this gem to make them available instantly.
+
+== Installation
+
+Download the sources and extract them in a directory. Enter this directory
+and run 'rake gem'. Then switch to the output folder and run 
+'gem install openssl-ext-x.x.x.gem'. Please note that you need 
+OpenSSL >= 1.0.0 installed to use this gem. If you have a custom 
+installation of OpenSSL, you may want to install the gem with providing the
+proper path to OpenSSL:
+'gem install openssl-ext-x.x.x.gem -- --with-openssl-dir=<path to openssl>'
+
